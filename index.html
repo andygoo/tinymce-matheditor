@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>TinyMCE Math Editor</title>
+		<script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+		<script type="text/javascript">
+			var localPath = document.URL.replace('index.html','');
+			
+			tinymce.init({
+				selector: 'textarea',
+				external_plugins: {
+					'mathEditor': localPath + 'matheditor/editor_plugin.js',
+				},
+				plugins : 'mathEditor',
+				toobar: 'mathEditor'
+			});
+		</script>
+	</head>
+	<body>
+		<textarea></textarea>
+	</body>
+</html>

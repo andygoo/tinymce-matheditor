@@ -1,7 +1,7 @@
-﻿(function (tinymce) {
-    var Icon = tinymce.baseURL + '/plugins3x/matheditor/icon/square_root.png';
-
-    tinymce.create('tinymce.plugins.matheditor', {
+﻿/*(function (tinymce) {
+    var Icon = tinymce.baseURL + 'matheditor/icon/square_root.png';
+    
+    tinymce.create('tinymce.plugins.mathEditor', {
         init: function (ed, url) {
             // Register commands
             ed.addCommand('mceMathEditor', function () {
@@ -20,4 +20,19 @@
     });
 
     tinymce.PluginManager.add('matheditor', tinymce.plugins.matheditor);
-})(tinymce);
+})(tinymce);*/
+
+tinymce.PluginManager.add('mathEditor', function(editor,url){
+    var icon = tinymce.baseURL + 'matheditor/icon/square_root.png';    
+    editor.addMenuItem('mathEditor',{
+        text : 'Math Editor',
+        context: 'tools',
+        onClick: function(){
+                editor.windowManager.open({
+                    url: url + '/html/plugin.html',
+                    width: 640,
+                    height: 420
+                });           
+        } 
+    });
+}); 
