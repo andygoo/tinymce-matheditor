@@ -1,10 +1,6 @@
-﻿jQuery(document).ready(function ($) {
-    var this_editor_window = top.tinymce.activeEditor;
-    
-    MathEditor.initialize();
-    
-    var MathEditor = {
-        tinyMceEditor: null,
+﻿
+var this_editor_window = top.tinymce.activeEditor;
+ var MathEditor = {
         insert: function (Latex) {
             $('#editable-math').mathquill('write', Latex).focus();
         },
@@ -33,15 +29,8 @@
         },
     
         insertEditor: function () {
-            /*var inst = tinyMCEPopup.editor;
-            tinyMCEPopup.restoreSelection();
             var span = '&nbsp;<span class="math-editor mathquill-rendered-math">' + $('#editable-math').mathquill('html') + '</span>&nbsp;';
-            //span.append($('#editable-math').mathquill('html'));
-    
-            //tinyMCEPopup.execCommand('mceInsertRawHTML', false, span); //use this for normal tinymce spacing "double space"
-            tinyMCEPopup.execCommand('mceInsertContent', false, span); //use this for single space as default!!
-    
-            inst.execCommand('mceEndUndoLevel', false, {}, { skip_undo: true });*/
+            this_editor_window.insertContent(span);
             MathEditor.close();
         },
     
@@ -79,10 +68,14 @@
     
         repeat: function (str, times) {
             return (new Array(times + 1)).join(str);
+        },
+        
+        makeCssInline: function(){
+            this.each    
         }
     }; 
-       
-});
+    
+    MathEditor.initialize();  
 
 
 
