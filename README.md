@@ -15,3 +15,8 @@ Insert math formulas to TinyMCE Editor.
 	});
 </script>	
 ```
+
+##Third Party Libraries
+###[MathQuill](http://mathquill.github.com)
+###[jQuery](http://jquery.com)
+###[jQuery EasyUI](http://www.jeasyui.com)
