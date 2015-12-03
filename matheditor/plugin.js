@@ -4,7 +4,7 @@
         editor.addButton('mathEditor',{
             title : 'Math Editor',
             image: icon,
-            onClick: function(){
+            onClick(){
                 editor.windowManager.open({
                     url: url + '/html/plugin.html',
                     title: 'Math Editor',
